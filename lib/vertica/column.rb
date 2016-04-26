@@ -40,7 +40,10 @@ module Vertica
       [:time_tz,      nil],
       [:numeric,      lambda { |s| BigDecimal.new(s) }],
       [:bytea,        nil],
-      [:rle_tuple,    nil]
+      [:rle_tuple,    nil],
+      *Array.new(96, []),
+      [:geometry,     STRING_CONVERTER],
+      [:geometry,     STRING_CONVERTER]
     ]
 
     DATA_TYPES = DATA_TYPE_CONVERSIONS.map { |t| t[0] }
